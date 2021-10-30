@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class setup : MonoBehaviour
 {
-    GameObject[,,] AllBalls;
+    public GameObject[,,] AllBalls;
     [SerializeField] GameObject Sphere;
     [SerializeField] int CubeSize;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         AllBalls = new GameObject[CubeSize, CubeSize, CubeSize];
 
@@ -20,7 +20,9 @@ public class setup : MonoBehaviour
                 for (int k = 0; k < CubeSize; k++)  // Z
                 {
 
-                    Vector3 pos = new Vector3(transform.position.x + (i - ((CubeSize - 1f) / 2)) * (transform.localScale.x / CubeSize), transform.position.y + (j - ((CubeSize - 1f) / 2)) * (transform.localScale.x / CubeSize), transform.position.z + +(k - ((CubeSize - 1f) / 2)) * (transform.localScale.x / CubeSize));
+                    Vector3 pos = new Vector3(transform.position.x + (i - ((CubeSize - 1f) / 2)) * (transform.localScale.x / CubeSize),
+                        transform.position.y + (j - ((CubeSize - 1f) / 2)) * (transform.localScale.x / CubeSize),
+                        transform.position.z + (k - ((CubeSize - 1f) / 2)) * (transform.localScale.x / CubeSize));
                     AllBalls[i, j, k] = Instantiate(Sphere, transform, true);
                     AllBalls[i, j, k].transform.position = pos;
                 }
@@ -30,9 +32,5 @@ public class setup : MonoBehaviour
         Debug.Log(transform.localScale.x);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 }

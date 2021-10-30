@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sphere: {fileID: 2832962606890082670, guid: b48158d486711b84a97359897f1fff56, type: 3}
-  CubeSize: 20
+  CubeSize: 9
 --- !u!23 &914368462
 MeshRenderer:
   m_ObjectHideFlags: 0
